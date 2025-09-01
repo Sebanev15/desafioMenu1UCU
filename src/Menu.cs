@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Ucu.Poo.Restaurant
@@ -9,21 +10,25 @@ namespace Ucu.Poo.Restaurant
     public class Menu
     {
         private List<Dish> dishes = new List<Dish>();
-
+        private string dishReturn;
         public string GetDishByName(string dishString)
         {
             foreach (Dish dish in this.dishes)
             {
                 if (dish.Name == dishString)
                 {
-                    return dish.Name;
+                    dishReturn = dish.Name;
+                    break;
                 }
                 else
                 {
-                    return null;
+                    dishReturn = null;
                 }
             }
+
+            return dishReturn;
         }
+
         public void AddDish(Dish dish)
         {
             dishes.Add(dish);
