@@ -10,14 +10,25 @@ namespace Ucu.Poo.Restaurant
     {
         private List<Dish> order = new List<Dish>();
 
-        private int Number { get; set; }
-        
-        private bool IsOccupied { get; set; }
+        private int number;
+        public int Number
+        {
+            get { return this.number;}
+            set { this.number = value; }
+        }
+
+        private bool isOccupied;
+
+        public bool IsOccupied
+        {
+            get { return this.isOccupied; }
+            set { this.isOccupied = value; }
+        }
 
         public Table(int thisnumber)
         {
-            this.Number = thisnumber;
-            this.IsOccupied = false;
+            this.number = thisnumber;
+            this.isOccupied = false;
         }
         
         public bool HasOrders()
@@ -27,22 +38,22 @@ namespace Ucu.Poo.Restaurant
 
         public void Occupy()
         {
-            if (this.IsOccupied)
+            if (this.isOccupied)
             {
                 Console.WriteLine("ERROR: Esta mesa ya esta ocupada.");
             }
             else
             {
-                this.IsOccupied = true;
+                this.isOccupied = true;
                 Console.WriteLine("Se ha ocupado la mesa correctamente");
             }
         }
 
         public void Free()
         {
-            if (this.IsOccupied)
+            if (this.isOccupied)
             {
-                this.IsOccupied = false;
+                this.isOccupied = false;
                 this.order.Clear();
                 Console.WriteLine("Se ha liberado la mesa correctamente");
             }
@@ -54,7 +65,7 @@ namespace Ucu.Poo.Restaurant
 
         public void AddToOrder(Dish thisDish)
         {
-            if (this.IsOccupied)
+            if (this.isOccupied)
             {
                 this.order.Add(thisDish);
                 Console.WriteLine("El plato se ha añadido a la orden");
