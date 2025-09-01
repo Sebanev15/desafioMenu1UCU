@@ -13,7 +13,6 @@ namespace Ucu.Poo.Restaurant
         private string dishReturn;
         public string GetDishByName(string dishString)
         {
-            string dishReturn;
             foreach (Dish dish in this.dishes)
             {
                 if (dish.Name.Contains(dishString))
