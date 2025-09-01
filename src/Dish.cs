@@ -2,15 +2,26 @@ namespace Ucu.Poo.Restaurant
 {
     public class Dish
     {
-        private string Name { get; set; }
-        private float Price { get; set; }
-        private bool IsVegetarian { get; set; }
-
-        public Dish( string name, float price, bool isVegetarian )
+        private string name;
+        private float price;
+        private bool isVegetarian;
+        public string Name
         {
-            this.Name = name;
-            this.Price = price;
-            this.IsVegetarian = isVegetarian;
+            get { return this.name;}
+            set { this.name = value; }
+        }
+        private float Price {
+            get { return this.price;}
+            set { this.price = value; } }
+        private bool IsVegetarian { 
+            get { return this.isVegetarian;}
+            set { this.isVegetarian = value; } }
+
+        public Dish( string thisName, float thisPrice, bool thisIsVegetarian )
+        {
+            this.name = thisName;
+            this.price = thisPrice;
+            this.isVegetarian = thisIsVegetarian;
         }
     }
 }
