@@ -68,7 +68,7 @@ namespace Ucu.Poo.Restaurant
             if (this.isOccupied)
             {
                 this.order.Add(thisDish);
-                Console.WriteLine("El plato se ha añadido a la orden");
+                Console.WriteLine("El plato "+ thisDish.Name + " se ha añadido a la orden");
             }
             else
             {
