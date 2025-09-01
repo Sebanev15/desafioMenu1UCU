@@ -13,6 +13,12 @@ namespace Ucu.Poo.Restaurant
         private int Number { get; set; }
         
         private bool IsOccupied { get; set; }
+
+        public Table(int thisnumber)
+        {
+            this.Number = thisnumber;
+            this.IsOccupied = false;
+        }
         
         public bool HasOrders()
         {
@@ -48,6 +54,7 @@ namespace Ucu.Poo.Restaurant
 
         public void AddToOrder(Dish thisDish)
         {
+            
             if (this.IsOccupied)
             {
                 this.order.Add(thisDish);
